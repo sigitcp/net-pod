@@ -141,7 +141,7 @@ export async function POST(req: NextRequest) {
                 "mystery": 9648, "romance": 10749, "sci-fi": 878, "thriller": 53,
                 "war": 10752, "western": 37
             };
-            const genreIds = genres.map(g => genreNameToId[g.toLowerCase()]).filter(Boolean).join(",");
+            const genreIds = genres.map((g: string) => genreNameToId[g.toLowerCase()]).filter(Boolean).join(",");
             
             if (genreIds) {
                 try {
